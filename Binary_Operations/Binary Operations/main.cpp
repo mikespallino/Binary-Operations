@@ -24,7 +24,7 @@ int main() {
 	cout << "Enter a number between 0 - 255: ";
 	cin >> term2;
 
-	if(term1 > term2) {
+	if(term1 < term2) {
 		unsigned short int t = term2;
 		term2 = term1;
 		term1 = t;
@@ -77,11 +77,11 @@ void do_add(bitset<8> a, bitset<8> b) {
 
 void do_subtract(bitset<8> a, bitset<8> b) {
 	bitset<8> difference;
-	bool bor = 0;
+	bool borin = 0;
 	for(int i = 0; i < 8; i++)
 	{
-		difference[i] = subtract(a[i], b[i], bor)[0];
-		bor = subtract(a[i], b[i], bor)[1];
+		difference[i] = subtract(a[i], b[i], borin)[0];
+		borin = subtract(a[i], b[i], borin)[1];
 	}
 
 	cout << "\nDifference: " << difference << endl;
